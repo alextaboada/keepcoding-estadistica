@@ -368,6 +368,8 @@ print('Derivado del punto anterior, podemos concluir que la variable NumDormitor
 ```{r}
 summary(lm(Precio~MetrosCuadrados,barrio_sol_filtrado))[4]
 print('El precio se incrementa en 0.9384259 de precio por cada unidad de metro cuadrado extra')
+print('y los márgenes del CI son')
+confint(lm(Precio~MetrosCuadrados,barrio_sol_filtrado))
 ```
 
 
@@ -377,6 +379,8 @@ print('El precio se incrementa en 0.9384259 de precio por cada unidad de metro c
 ```{r}
 summary(lm(Precio~NumDormitorios,barrio_sol_filtrado))[4]
 print('El precio se incrementa en 39.31034 de precio por cada habitación extra')
+print('y los márgenes del CI son')
+confint(lm(Precio~NumDormitorios,barrio_sol_filtrado))
 ```
 
 
@@ -386,6 +390,7 @@ print('El precio se incrementa en 39.31034 de precio por cada habitación extra'
 ```{r}
 totalapartamentos3 <-nrow(barrio_sol[barrio_sol$NumDormitorios == 3,])
 binom.test(1,totalapartamentos3)
+print('La probabilidad es de un 0.01818182')
 ```
 
 
